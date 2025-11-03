@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Robert Nguyen | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8GLRVX10Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-C8GLRVX10Y');
+  </script> 
+  
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --01: #f2f2f2;
+      --02: #eae4d5;
+      --03: #b6b09f;
+      --04: #0f172a;
+      --05: #ffffff;
+      --06: #117a65;
+      --07: #ea580c;
+      --08: #757575;
+
+      --font-playfair: 'Playfair Display', serif;
+      --font-poppins: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-poppins);
+      background-color: var(--04);
+      color: var(--01);
+    }
+
+    header.site-header {
+      background-color: var(--04);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--03);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 2rem;
+      position: relative;
+    }
+    
+    .logo, .footer-brand h2 {
+      font-family: var(--font-playfair);
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--02);
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+    }
+
+    .nav-menu a {
+      color: var(--02);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
+    }
+
+    .nav-menu a:hover {
+      transform: scale(1.05);
+      text-shadow: 0 0 6px var(--02);
+    }
+
+    .btn-contact {
+      background-color: var(--03);
+      color: var(--05);
+      padding: 1rem 1.5rem;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .btn-contact:hover {
+      background-color: var(--06);
+      transform: scale(1.05);
+    }
+
+    main {
+      padding-top: 100px;
+    }
+    
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: var(--05);
+      background: none;
+      border: none;
+      z-index: 1001;
+    }
+
+    .intro-section {
+      background-color: var(--04);
+      padding: 3rem 0;
+    }
+
+    .intro-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      padding: 0 2rem;
+      margin: 0 auto;
+      gap: 2rem;
+      flex-wrap: wrap;
+      box-sizing: border-box; 
+    }
+
+    .intro-content {
+      flex: 1 1 600px;
+    }
+
+    .intro-welcome {
+      font-family: var(--font-playfair);
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--02);
+    }
+
+    .intro-name {
+      font-family: var(--font-poppins);
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--05);
+      margin-bottom: 2rem;
+      line-height: 1.4;
+    }
+
+    .intro-bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .intro-bullets li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: var(--01);
+      line-height: 1.6
+    }
+
+    .intro-bullets li::before {
+      content: "";
+      background-image: url("Images/Icons/Bullet point.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .intro-image {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .intro-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      background-color: transparent;
+    }
+
+    .intro-quote {
+      font-family: var(--font-playfair);
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--02);
+      margin-top: 1.25rem;
+    }
+
+    .cards-section {
+      background-color: var(--04);
+      padding: 6rem 2rem;
+    }
+    
+    .cards-grid, .values-grid, .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; 
+      align-items: flex-start; 
+      height: 100%; 
+      padding: 2rem;
+      border-radius: 10px;
+      position: relative;
+      transition: transform 0.3s ease;
+      text-decoration: none; 
+      width: 100%;   
+      box-sizing: border-box;
+    }
+
+    .card h2, .value-card h3, .project-title {
+      font-family: var(--font-poppins);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--04);
+    }
+    
+    .card p, .value-card p {
+      font-family: var(--font-poppins);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--04);
+      text-align: justify;
+      margin-top: 0.25rem;
+    }
+
+    .card .arrow {
+      width: 28px;
+      height: 28px;
+      background-image: url("Images/Icons/Arrow.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left center;
+      margin-top: 0.5rem;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .card-story {
+      background-color: var(--02);
+    }
+    
+    .card-experience {
+      background-color: var(--05);
+    }
+    
+    .card-work {
+      background-color: var(--03);
+    }
+
+    .who-section, .projects-section {
+      background-color: var(--05);
+      padding: 6rem 2rem;
+    }
+    
+    .who-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+      max-width: 1200px;
+      margin: auto;
+      gap: 5rem;
+    }
+    
+    .who-image img {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 10px;
+    }
+
+    .who-label, .values-label, .projects-label {
+      font-family: var(--font-poppins);
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: var(--08);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+   
+    .who-title, .values-title, .projects-title, .contact-title {
+      font-family: var(--font-poppins);
+      font-weight: 900;
+      font-size: 1.75rem;
+      color: var(--06);
+      line-height: 1.4;
+      margin-bottom: 1.45rem;
+    }
+      
+    .who-content {
+      flex: 1 1 300px;
+    }
+
+    .who-content p {
+      font-size: 1rem;
+      color: var(--08);
+      line-height: 1.6;
+      text-align: justify;
+    }
+    
+    .skills-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+      margin-top: 2rem;
+    }
+    
+    .skills-row img {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .values-section {
+      background-color: var(--02);
+      padding: 6rem 2rem;
+    }
+    
+    .values-container, .projects-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .values-title, .projects-title {
+      margin-bottom: 2.125rem;
+    }
+    
+    .values-grid, .projects-grid {
+      margin-bottom: 3.5rem;
+    }
+    
+    .value-card {
+      padding: 2rem;
+      border-radius: 10px;
+      background-color: var(--03);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; 
+      align-items: flex-start; 
+      height: 100%; 
+    }
+
+    .icon img {
+      width: 30px;
+      height: auto;
+    }
+    
+    .value-card h3, .value-card p {
+      color: var(--05)
+    }
+    
+    .value-resilience {
+      background-color: var(--04);
+    }
+
+    .value-courage {
+      background-color: var(--08);
+    }
+    
+    .values-button, .projects-button {
+      text-align: center;
+    }
+    
+    .btn-learn-more, .btn-explore-more, .contact-submit {
+      background-color: var(--03);
+      color: var(--05);
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      font-size: 1.125rem;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+    
+    .btn-learn-more:hover, .btn-explore-more:hover {
+      background-color: var(--06);
+      transform: scale(1.05);
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      align-items: stretch;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--05);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.16);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(17, 122, 101, 0.4);
+      box-shadow: 0 26px 52px rgba(15, 23, 42, 0.2);
+    }
+
+    .project-card:focus-visible {
+      outline: 3px solid var(--07);
+      outline-offset: 4px;
+    }
+
+    .project-media {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .project-card:hover .project-media img,
+    .project-card:focus-visible .project-media img {
+      transform: scale(1.05);
+    }
+
+    .project-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      padding: 1.5rem 1.75rem 1.75rem;
+      background: var(--05);
+    }
+
+    .project-meta {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--08);
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--04);
+      line-height: 1.4;
+    }
+
+    .project-desc {
+      margin: 0;
+      font-size: 0.95rem;
+      color: rgba(15, 23, 42, 0.7);
+      line-height: 1.6;
+    }
+
+    .project-tags {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .project-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(17, 122, 101, 0.1);
+      color: var(--06);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .projects-grid {
+        gap: 1.75rem;
+      }
+
+      .project-card {
+        border-radius: 14px;
+      }
+
+      .project-body {
+        padding: 1.25rem 1.5rem 1.5rem;
+      }
+
+      .project-title {
+        font-size: 1.1rem;
+      }
+
+      .project-desc {
+        font-size: 0.9rem;
+      }
+    }
+
+    .projects-footer {
+      font-family: var(--font-playfair);
+      font-style: italic;
+      color: var(--06);
+      text-align: center;
+      margin-top: 5rem;
+      font-size: 1.25rem;
+    }
+    
+    .project-slider {
+      margin-top: 2.375rem;
+      overflow: hidden;
+    }
+    
+    .slider-track {
+      display: flex;
+      gap: 2rem;
+      width: max-content;     
+      will-change: transform;
+      animation: slide 10s linear infinite;
+      backface-visibility: hidden;
+      transform: translateZ(0);  
+    }
+    
+    .slider-track img {
+      height: 200px;
+      width: auto;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+    
+    @keyframes slide {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .insights-section {
+      background-color: var(--02);
+      padding: 6rem 2rem;
+    }
+
+    .insights-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .insights-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 2.75rem;
+    }
+
+    .insights-title {
+      margin: 0;
+      font-family: var(--font-playfair);
+      font-weight: 900;
+      font-size: 2.25rem;
+      letter-spacing: 0.05em;
+      color: var(--06);
+    }
+
+    .insights-subtitle {
+      margin: 1rem auto 0;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: rgba(15, 23, 42, 0.75);
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .insight-card {
+      background: var(--05);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 16px;
+      padding: 1.75rem;
+      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 38px rgba(15, 23, 42, 0.1);
+    }
+
+    .insight-card h3 {
+      margin: 0 0 0.85rem;
+      font-family: var(--font-playfair);
+      font-size: 1.35rem;
+      color: #1f252b;
+    }
+
+    .insight-card p {
+      margin: 0 0 1.25rem;
+      font-size: 0.95rem;
+      color: rgba(31, 37, 43, 0.75);
+      line-height: 1.65;
+    }
+
+    .insight-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--06);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .insight-link:hover {
+      color: var(--07);
+    }
+
+    .insights-footer {
+      margin-top: 2.75rem;
+      text-align: center;
+    }
+
+    .insights-view-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--06);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .insights-view-all:hover {
+      color: var(--07);
+    }
+
+
+    .contact-section {
+      background-color: var(--04);
+      padding: 6rem 2rem;
+      text-align: left;
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: start;
+      box-sizing: border-box;
+    }
+
+    .contact-info ul {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0;
+    }
+
+    .contact-info ul li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      color: var(--01);
+    }
+
+    .contact-info ul li:last-child {
+      margin-bottom: 0;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--07);
+      padding: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .contact-info ul li.contact-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.75rem;
+    }
+
+    .contact-info ul li.contact-links a:last-child {
+      margin-right: 0;
+    }
+
+    .contact-info ul li.contact-links img.footer-icon {
+      margin: 0;
+    }
+
+    @media (min-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .contact-info, .contact-form-wrapper {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    .contact-title {
+      color: var(--02);
+      font-size: 2.5rem;
+      margin: 0.75rem 0 1rem;
+    }
+
+    .contact-label {
+      display: inline-block;
+      color: var(--07);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+    }
+
+    .contact-subtitle {
+      font-family: var(--font-poppins);
+      font-size: 1rem;
+      color: var(--01);
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      font-family: var(--font-poppins);
+      border: none;
+      border-radius: 5px;
+      background-color: var(--05);
+      color: var(--04);
+    }
+    
+    .contact-form textarea {
+      resize: vertical;
+    }
+    
+    .contact-submit {
+      background: var(--07);
+      color: var(--05);
+      padding: 0.75rem 1.25rem;
+      border-radius: 6px;
+      border: none;
+      font-weight: 700;
+      transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+      will-change: transform, box-shadow;
+    }
+
+    .contact-submit:hover {
+      background: var(--06);         
+      transform: translateY(-1px) scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,.18);
+    }
+
+    .contact-submit:active {
+      transform: translateY(0) scale(0.98); 
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+    }
+
+    .contact-submit.is-busy,
+    .contact-submit:disabled {
+      opacity: 0.9;
+      cursor: progress;
+      transform: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+    }
+
+    .contact-submit.is-busy {
+      position: relative;
+      color: transparent; 
+    }
+    .contact-submit.is-busy::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2.5px solid rgba(255,255,255,0.55);
+      border-top-color: rgba(255,255,255,1);
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+
+    .thank-you {
+      margin-top: 2rem;
+      font-size: 1.125rem;
+      font-weight: 500;
+      font-style: none;
+      color: var(--04);
+      text-align: center;
+      font-family: var(--font-playfair);
+    }
+    
+    .site-footer {
+      background-color: var(--04);
+      color: var(--05);
+      padding: 4rem 2rem 5rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+      gap: 5rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    
+    .footer-contact h3,
+    .footer-nav h3 {
+      color: var(--02);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-contact ul,
+    .footer-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .footer-contact li,
+    .footer-nav li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--02);
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-contact a,
+    .footer-nav a {
+      color: var(--02);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact a:hover,
+    .footer-nav a:hover {
+      color: var(--05);
+    }
+
+    .footer-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 1rem;
+      margin-top: 0;
+    }
+    
+/* Responsive for mobile */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .logo, .footer-brand h2 {
+        font-size: 28px;
+        margin-bottom: 0.5rem;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
+      }
+
+      .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+        background-color: var(--04);
+        padding: 0;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .nav-menu.show {
+        max-height: 500px;
+        padding: 1rem 0;
+        opacity: 1;
+      }
+
+      .nav-menu a {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+      }
+
+      .insights-section { padding: 5rem 1.5rem; }
+      .insights-title { font-size: 2rem; }
+      .insights-subtitle { font-size: 0.95rem; }
+      .insights-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .insight-card { padding: 1.5rem; }
+
+      .intro-grid {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro-content, .intro-image {
+        flex: 1 1 100%;
+      }
+
+      .intro-welcome {
+        font-size: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+      
+      .intro-name {
+        font-size: 2.25rem;
+      }
+
+      .intro-bullets {
+        padding-left: 1.5rem;
+        text-align: left;
+      }
+
+      .intro-quote, .projects-footer {
+        font-size: 1.125rem;
+      }
+      
+      .card, .value-card {
+        padding: 1.75rem;
+        font-size: 0.875rem;
+      }
+
+      .card h2, .value-card h3 {
+        font-size: 1.25rem;
+      }
+    
+      .card .arrow {
+        width: 22px;
+        height: 22px;
+        align-self: flex-start;
+      }
+      
+      .who-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .who-title {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1.75rem;
+      }
+      
+      .values-title, .projects-title {
+        font-size: 1.5rem;
+        text-align: center;        
+        margin-bottom: 2.375rem;
+      }
+      
+      .who-content {
+        flex: 1 1 100%;
+      }
+      
+      .values-label, .projects-label {
+        text-align: center;
+        display: block;
+        width: 100%;
+        margin-bottom: 1.25rem;
+      }
+
+      .intro-bullets li, .card p, .who-content p, .value-card p, .project-desc {
+        font-size: 0.875rem;
+      }
+
+      .contact-title {
+        font-size: 1.625rem;
+      }
+      
+      .contact-subtitle, .contact-form input, .contact-form textarea {
+        font-size: 0.95rem;
+      }
+
+      .thank-you {
+        font-size: 1rem;
+      }
+      
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .footer-contact h3, .footer-nav h3, .footer-contact ul, .footer-nav ul, .footer-contact li, .footer-nav li {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+  
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="logo" href="https://Robertn02.github.io/website/">ROBERT NGUYEN</a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu">☰</button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="https://Robertn02.github.io/website/">HOME</a>
+        <a href="https://Robertn02.github.io/website/experience/">EXPERIENCE</a>
+        <a href="https://Robertn02.github.io/website/projects/">PROJECTS</a>
+        <a href="https://Robertn02.github.io/website/blogs/">BLOGS</a>
+        <a href="#contact" class="btn-contact">CONTACT ME</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-section" id="home">
+      <div class="intro-grid">
+        <div class="intro-content">
+          <p class="intro-welcome">Welcome, nice to meet you!</p>
+          <h1 class="intro-name">MY NAME IS<br>ROBERT NGUYEN</h1>
+          <ul class="intro-bullets">
+            <li>I bring strong global experience in analytics, business, and technology.</li>
+            <li>I’m known for working effectively across functions and cultures.</li>
+            <li>I’m driven by data and insights that lead to smarter business decisions.</li>
+          </ul>
+        </div>
+        <div class="intro-image">
+          <img src="Images/Personal_1.jpg" alt="Robert Nguyen">
+          <p class="intro-quote">Every accomplishment starts with the decision to try<br>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards-section">
+      <div class="cards-grid">
+        
+        <a href="/https://Robertn02.github.io/website/experience" class="card card-story">
+          <h2>MY EXPERIENCE</h2>
+          <p>A look at the path that shaped how I think and work across business and analytics. Explore key roles, lessons, and moments that influenced my approach and growth.</p>
+          <div class="arrow"></div>
+        </a>
+    
+        <a href="/https://Robertn02.github.io/website/projects" class="card card-experience">
+          <h2>MY PROJECTS</h2>
+          <p>Practical work applying analytics to real questions and decisions. Click through to see how I break problems down and turn analysis into clear, useful outcomes.</p>
+          <div class="arrow"></div>
+        </a>
+    
+        <a href="/https://Robertn02.github.io/website/blogs" class="card card-work">
+          <h2>MY INSIGHTS</h2>
+          <p>Thoughts and explorations on business, industries, and strategy through an analytical lens. Dive into ideas, patterns, and frameworks that help explain how companies operate and make decisions.</p>
+          <div class="arrow"></div>
+        </a>
+    
+      </div>
+    </section>
+
+    <section class="who-section">
+      <div class="who-grid">
+        <div class="who-image">
+          <img src="Images/Personal_2.JPG" alt="Robert Nguyen">
+        </div>
+        <div class="who-content">
+          <div class="who-label">WHO AM I</div>
+          <h2 class="who-title">PROBLEM SOLVER WITH BACKGROUND IN ANALYTICS, FINANCE, AND TECHNOLOGY</h2>
+          <p>I’m interested in how businesses run and how data can help teams make clear decisions. With a background in finance and data analytics, I focus on understanding problems, bringing structure, and working with others to move ideas into action.</p>
+          <p>In recent years, I’ve built experience in consulting, research, and business settings, including work in aviation, operations, and technology. These roles strengthened how I collaborate across functions, adapt to different challenges, and communicate simply and clearly.</p>
+          <p>My goal is to connect business context with data and contribute to steady, consistent progress. Clear thinking, collaboration, and practical problem-solving guide how I work.</p>
+    
+          <div class="skills-row">
+            <img src="Images/Logos/Excel.png" alt="Excel">
+            <img src="Images/Logos/PowerPoint.png" alt="PowerPoint">
+            <img src="Images/Logos/SQL.png" alt="SQL">
+            <img src="Images/Logos/Python.png" alt="Python">
+            <img src="Images/Logos/Tableau.png" alt="Tableau">
+            <img src="Images/Logos/Power BI.png" alt="Power BI">
+            <img src="Images/Logos/SAP.png" alt="SAP">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="values-section">
+      <div class="values-container">
+        <div class="values-label">WHAT DRIVES ME</div>
+        <h2 class="values-title">VALUES THAT I CARRY INTO BUSINESS AND ANALYTICS</h2>
+    
+        <div class="values-grid">
+          <div class="value-card value-collab">
+            <div class="icon"><img src="Images/Icons/diversity.png" alt="Collaboration Icon" /></div>
+            <h3>COLLABORATION</h3>
+            <p>“Good work happens when people think together. I listen, ask questions, and make sure everyone is aligned. Supporting teammates and building clarity early helps ideas move smoothly and prevents confusion later.”</p>
+          </div>
+    
+          <div class="value-card value-resilience">
+            <div class="icon"><img src="Images/Icons/verified.png" alt="Resilience Icon" /></div>
+            <h3>RELIABILITY</h3>
+            <p>“Projects move best with steady effort and organization. I track priorities, stay calm under pressure, and follow through. When things change, I adjust quickly and keep work moving without losing quality.”</p>
+          </div>
+    
+          <div class="value-card value-courage">
+            <div class="icon"><img src="Images/Icons/bulb.png" alt="Courage Icon" /></div>
+            <h3>INITIATIVE</h3>
+            <p>“When direction is unclear, I take steps to explore, suggest paths, or surface questions. Speaking up, offering help, and sharing ideas early helps the team move faster and make decisions with confidence.”</p>
+          </div>
+        </div>
+    
+        <div class="values-button">
+          <a href="/https://Robertn02.github.io/website/experience" class="btn-learn-more">LEARN MORE ABOUT MY JOURNEY</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-section">
+      <div class="projects-container">
+        <div class="projects-label">WHAT I’VE ACCOMPLISHED</div>
+        <h2 class="projects-title">PROJECTS & PRESENTATIONS I’VE BUILT INDIVIDUALLY AND TOGETHER</h2> 
+    
+        <div class="projects-grid">
+          <!-- Example card -->
+        <a href="https://github.com/Robertn02/Fundamental-Indexation-and-Smart-Beta-Performance-Analysis"
+          class="project-card" aria-label="Finance">
+          <div class="project-media">
+            <img src="Images/Projects/Ride Sharing.jpg" alt="Finance & Investing">
+          </div>
+          <div class="project-body">
+            <div class="project-meta">Finance & Investing</div>
+            <h3 class="project-title">Fundamental Indexation and Smart Beta Performance Analysis</h3>
+            <p class="project-desc">Investigates how fundamental metrics influence portfolio performance relative to market capitalization weighting</p>
+            <div class="project-tags">
+              <span class="project-tag">CAPM</span>
+              <span class="project-tag">FF3</span>
+              <span class="project-tag">Time Series</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/Robertn02/Flight-Delay-Prediction-and-Airport-Optimization-LAX"
+          class="project-card" aria-label="Aviation">
+          <div class="project-media">
+            <img src="Images/Projects/Sales Performance.webp" alt="Aviation delay prediction">
+          </div>
+          <div class="project-body">
+            <div class="project-meta">Aviation & Mobility</div>
+            <h3 class="project-title">Flight Delay Prediction and Airport Optimization at LAX</h3>
+            <p class="project-desc">This analysis aims to inform strategies for optimizing airport operations and improving punctuality.</p>
+            <div class="project-tags">
+              <span class="project-tag">EDA</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Machine Learning</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/Robertn02/Walmart-Retail-Performance-Analytics-Sales-Drivers-and-Holiday-Effects"
+          class="project-card" aria-label="Car insurance loss analytics">
+          <div class="project-media">
+            <img src="Images/Projects/Car Insurance.avif" alt="Insurance loss modeling">
+          </div>
+          <div class="project-body">
+            <div class="project-meta">Retail & Consumer</div>
+            <h3 class="project-title">Walmart Retail Performance Analytics</h3>
+            <p class="project-desc">Comprehensive store-level analysis of Walmart’s retail performance focusing on sales drivers, holiday impact, productivity, and segmentation.</p>
+            <div class="project-tags">
+              <span class="project-tag">EDA</span>
+              <span class="project-tag">Regression</span>
+              <span class="project-tag">K-Means</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="projects-button">
+        <a href="https://Robertn02.github.io/website/projects/" class="btn-explore-more">EXPLORE MORE PROJECTS</a>
+      </div>
+  
+      <p class="projects-footer">Beyond that, I enjoy the journey and have built meaningful connections with people from around the globe.</p>
+  
+      <div class="project-slider">
+        <div class="slider-track">
+          <img src="Images/Slider/USC_1.JPG" alt="USC_1">
+          <img src="Images/Slider/USC_2.jpg" alt="USC_2">
+          <img src="Images/Slider/EYP_1.JPG" alt="EYP">
+          <img src="Images/Slider/USC_3.jpg" alt="USC_3">            
+          <img src="Images/Slider/USC_4.JPG" alt="USC_4">
+          <img src="Images/Slider/EYP_2.JPG" alt="EYP">
+          <img src="Images/Slider/Champion.jpg" alt="USC Champion">
+        </div>
+      </div>
+    </section>
+    
+    <section class="insights-section">
+      <div class="insights-container">
+        <div class="insights-header">
+          <h2 class="insights-title">INSIGHTS</h2>
+          <p class="insights-subtitle">Exploring how analytics helps explain industries, decisions, and how businesses operate — and sharing takeaways along the way.</p>
+        </div>
+
+        <div class="insights-grid">
+          <article class="insight-card">
+            <h3>Understanding How Airlines Manage Capacity</h3>
+            <p>A look into how demand, timing, and constraints shape aviation planning and performance.</p>
+            <a class="insight-link" href="https://medium.com/@Robertn02" target="_blank" rel="noopener">Read more →</a>
+          </article>
+
+          <article class="insight-card">
+            <h3>What Drives Operational Decisions in Complex Systems</h3>
+            <p>Breaking down how data, people, and constraints connect in real-world operations.</p>
+            <a class="insight-link" href="https://medium.com/@Robertn02" target="_blank" rel="noopener">Read more →</a>
+          </article>
+
+          <article class="insight-card">
+            <h3>Using Analytics to Support Strategy, Not Just Reporting</h3>
+            <p>How structured thinking and data context help teams make smarter long-term decisions.</p>
+            <a class="insight-link" href="https://medium.com/@Robertn02" target="_blank" rel="noopener">Read more →</a>
+          </article>
+        </div>
+
+        <div class="insights-footer">
+          <a class="insights-view-all" href="https://medium.com/@Robertn02" target="_blank" rel="noopener">View all insights</a>
+        </div>
+      </div>
+    </section>
+    
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="contact-label">Contact</span>
+            <h2 class="contact-title">Get in Touch</h2>
+            <p class="contact-subtitle">Whether you have a project in mind or just want to chat about technology, I'd love to hear from you!</p>
+
+            <ul>
+              <li><img src="Images/Icons/location_on.png" alt="Location icon" class="contact-icon"/>Los Angeles, CA, United States</li>
+              <li><img src="Images/Icons/call.png" alt="Phone icon" class="contact-icon"/>+1 (213) 272-2966</li>
+              <li><img src="Images/Icons/mail.png" alt="Email icon" class="contact-icon"/>Phucn@marshall.usc.edu</li>
+              <li class="contact-links">
+                <a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener"><img src="Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a>
+                <a href="https://github.com/Robertn02" target="_blank" rel="noopener"><img src="Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a>
+                <a href="https://medium.com/@Robertn02" target="_blank" rel="noopener"><img src="Images/Logos/Medium.png" alt="Medium" class="footer-icon" /></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form id="contactForm" class="contact-form" action="#" method="POST" style="background:var(--05); padding:2rem; border-radius:8px; color:var(--04);">
+              <h3 style="margin:0 0 1rem 0; color:var(--04);">Get in touch</h3>
+              <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:0.75rem 1rem; margin-bottom:0.75rem; border-radius:6px; border:1px solid #ddd;" />
+              <input type="text" name="subject" placeholder="Subject" style="width:100%; padding:0.75rem 1rem; margin-bottom:0.75rem; border-radius:6px; border:1px solid #ddd;" />
+              <textarea name="message" placeholder="Message" rows="5" required style="width:100%; padding:0.75rem 1rem; margin-bottom:0.75rem; border-radius:6px; border:1px solid #ddd;"></textarea>
+              <input type="hidden" name="source" value="Home">
+              <button type="submit" class="contact-submit" style="background:var(--07); color:var(--05); padding:0.75rem 1.25rem; border-radius:6px; border:none; font-weight:700;">Submit now</button>
+              <div id="thankYouMessage" class="thank-you" style="display:none;">Thanks for reaching out! I’ll be in touch soon.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main> 
+  
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>ROBERT NGUYEN</h2>
+      </div>
+
+      <div class="footer-contact">
+        <h3>CONTACT</h3>
+        <ul>
+          <li><a href="tel:+12132722966">213-272-2966</a></li>
+          <li><a href="mailto:Phucn@marshall.usc.edu">Phucn@marshall.usc.edu</a></li>
+          <li>Los Angeles, CA, United States</li>
+          <li><a href="https://www.linkedin.com/in/phucnh2402/" target="_blank"><img src="Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a> <a href="https://github.com/Robertn02" target="_blank"><img src="Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a><a href="https://medium.com/@Robertn02" target="_blank"><img src="Images/Logos/Medium.png" alt="Medium" class="footer-icon" /></a></li>            
+        </ul>
+      </div>
+    
+      <div class="footer-nav">
+        <h3>NAVIGATION</h3>
+        <ul>
+          <li><a href="https://Robertn02.github.io/website/">Home</a></li>
+          <li><a href="https://Robertn02.github.io/website/experience/">Experience</a></li>
+          <li><a href="https://Robertn02.github.io/website/projects/">Projects</a></li>
+          <li><a href="https://Robertn02.github.io/website/blogs/">Blogs</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+        
+  <!-- Toggle menu visibility and icon -->
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (toggleBtn && navMenu) {
+      toggleBtn.addEventListener('click', () => {
+        const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', String(!expanded));
+        navMenu.classList.toggle('show');
+        toggleBtn.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
+      });
+    }
+  </script>
+
+  <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbw6dTnsOkly42s5ulUaM93uMCB_9UTckrBbT0KCVS-44XFllEsEbmcS3huk0SaB7TafGg/exec';
+  
+  const form = document.getElementById('contactForm');
+  const thankYou = document.getElementById('thankYouMessage');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const btn = form.querySelector('.contact-submit');
+    const originalText = btn.textContent;
+    const fd = new FormData(form);
+
+    btn.classList.add('is-busy');
+    btn.disabled = true;
+
+    const fields = form.querySelectorAll('input:not([type="hidden"]), textarea, button');
+
+    fields.forEach(el => el.disabled = true);
+
+    try {
+      const resp = await fetch(scriptURL, { method: 'POST', body: fd });
+
+      let ok = false;
+      try { ok = !!(await resp.json()).ok; } catch { ok = resp.ok; }
+
+      if (ok) {
+        form.reset();
+
+        fields.forEach(el => el.style.display = 'none');
+        thankYou.style.display = 'block';
+      } else {
+        alert('Submission failed. Please try again.');
+        fields.forEach(el => el.disabled = false);
+        btn.classList.remove('is-busy');
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }
+    } catch (err) {
+      console.error('Network or CORS error:', err);
+      alert('Sorry, something went wrong!');
+      fields.forEach(el => el.disabled = false);
+      btn.classList.remove('is-busy');
+      btn.disabled = false;
+      btn.textContent = originalText;
+    }
+  });
+  </script>
+</body>
+</html>
