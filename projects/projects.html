@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Robert Nguyen | Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C8GLRVX10Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-C8GLRVX10Y');
+  </script> 
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --01: #f2f2f2;
+      --02: #eae4d5;
+      --03: #b6b09f;
+      --04: #0f172a;
+      --05: #ffffff;
+      --06: #117a65;
+      --07: #ea580c;
+      --08: #757575;
+
+      --font-playfair: 'Playfair Display', serif;
+      --font-poppins: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-poppins);
+      background-color: var(--04);
+      color: var(--05);
+    }
+
+    header.site-header {
+      background-color: var(--04);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--03);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 2rem;
+      position: relative;
+    }
+
+    .logo, .footer-brand h2 {
+      font-family: var(--font-playfair);
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--02);
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+    }
+
+    .nav-menu a {
+      color: var(--02);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
+    }
+
+    .nav-menu a:hover {
+      transform: scale(1.05);
+      text-shadow: 0 0 6px var(--02);
+    }
+
+    .btn-contact {
+      background-color: var(--03);
+      color: var(--05);
+      padding: 1rem 1.5rem;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .btn-contact:hover {
+      background-color: var(--06);
+      transform: scale(1.05);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: var(--05);
+      background: none;
+      border: none;
+      z-index: 1001;
+    }
+
+    /* Projects */
+    .projects-section {
+      background: var(--05); /*f8f5f0*/
+      color: #1f252b;
+      padding: 7rem 2rem 6rem;
+    }
+
+    .projects-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .projects-header {
+      text-align: center;
+      max-width: 840px;
+      margin: 0 auto 2.5rem;
+    }
+
+
+    .projects-title {
+      margin: 0;
+      font-family: var(--font-playfair);
+      font-weight: 700;
+      font-size: 2.6rem;
+      letter-spacing: 0.04em;
+      color: #1f252b;
+    }
+
+    .projects-intro {
+      margin: 0.85rem auto 0;
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color: #50555a;
+      max-width: 720px;
+    }
+
+    .projects-divider {
+      border: none;
+      border-top: 1px solid rgba(31, 37, 43, 0.16);
+      max-width: 960px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .projects-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem;
+      margin: 0 auto 2.5rem;
+      max-width: 720px;
+    }
+
+    .filter-btn {
+      border: 1px solid rgba(17, 122, 101, 0.16);
+      background: rgba(17, 122, 101, 0.05);
+      color: #1f4c44;
+      font-family: var(--font-poppins);
+      font-weight: 600;
+      font-size: 0.86rem;
+      letter-spacing: 0.05em;
+      padding: 0.5rem 1.15rem;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .filter-btn:hover {
+      background: rgba(17, 122, 101, 0.12);
+      border-color: rgba(17, 122, 101, 0.3);
+    }
+
+    .filter-btn.is-active {
+      background: var(--06);
+      color: var(--05);
+      border-color: rgba(17, 122, 101, 0.4);
+      box-shadow: none;
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 2.9rem;
+      background: var(--05);
+      border: 1px solid rgba(186, 175, 156, 0.45);
+      border-radius: 16px;
+      box-shadow: 0 18px 36px rgba(31, 37, 43, 0.08);
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .project-card.is-hiding {
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+    }
+
+    .project-card.is-hidden {
+      display: none;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(17, 122, 101, 0.35);
+      box-shadow: 0 26px 46px rgba(31, 37, 43, 0.12);
+    }
+
+    .project-media {
+      aspect-ratio: 4 / 3;
+      min-height: 280px;
+      background: rgba(15, 23, 42, 0.85);
+      overflow: hidden;
+    }
+
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-body {
+      padding: 1.7rem 2.2rem 2.05rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .project-meta {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6b7076;
+    }
+
+    .project-title {
+      margin: 0;
+      font-family: var(--font-playfair);
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #1f252b;
+      line-height: 1.45;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 6px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    .project-card:hover .project-title,
+    .project-card:focus-visible .project-title {
+      color: #0f172a;
+      text-decoration-color: rgba(15, 23, 42, 0.5);
+    }
+
+    .project-desc {
+      margin: 0;
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: #41464d;
+    }
+
+    .project-tags {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .project-tag {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(17, 122, 101, 0.1);
+      color: var(--06);
+      white-space: nowrap;
+    }
+
+    .projects-footer-note {
+      margin-top: 3rem;
+      text-align: center;
+      font-style: italic;
+      font-family: var(--font-playfair);
+      color: var(--06);
+      font-size: 1.05rem;
+    }
+
+    .site-footer {
+      background-color: var(--04);
+      color: var(--05);
+      padding: 4rem 2rem 5rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+      gap: 5rem;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .footer-contact h3,
+    .footer-nav h3 {
+      color: var(--02);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-contact ul,
+    .footer-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-contact li,
+    .footer-nav li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--02);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-contact a,
+    .footer-nav a {
+      color: var(--02);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-contact a:hover,
+    .footer-nav a:hover {
+      color: var(--05);
+    }
+
+    .footer-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 1rem;
+      vertical-align: middle;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 900px) {
+      .projects-section { padding: 6rem 1.75rem 5rem; }
+      .project-card { grid-template-columns: 280px minmax(0, 1fr); gap: 2.4rem; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .logo,
+      .footer-brand h2 {
+        font-size: 28px;
+      }
+
+      .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
+      }
+
+      .nav-menu {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+        background: var(--04);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .nav-menu.show {
+        max-height: 500px;
+        padding: 1rem 0;
+        opacity: 1;
+      }
+
+      .nav-menu a {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+      }
+
+      .projects-section { padding: 5.5rem 1.25rem 4.5rem; }
+      .projects-title { font-size: 2.15rem; }
+      .projects-intro { font-size: 0.95rem; }
+      .projects-filters { gap: 0.5rem; }
+      .filter-btn { flex: 1 1 calc(50% - 0.5rem); font-size: 0.8rem; }
+
+      .project-card {
+        grid-template-columns: 1fr;
+        gap: 1.3rem;
+      }
+
+      .project-media { aspect-ratio: 5 / 3; min-height: 220px; }
+      .project-body { padding: 1.6rem 1.75rem 1.85rem; gap: 0.5rem; }
+      .project-title { font-size: 1.25rem; }
+      .project-desc { font-size: 0.9rem; }
+
+      .footer-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="logo" href="https://Robertn02.github.io/website/">ROBERT NGUYEN</a>
+
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-menu">☰</button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="https://Robertn02.github.io/website/">HOME</a>
+        <a href="https://Robertn02.github.io/website/experience/">EXPERIENCE</a>
+        <a href="https://Robertn02.github.io/website/projects/">PROJECTS</a>
+        <a href="https://Robertn02.github.io/website/blogs/">BLOGS</a>
+        <a href="https://Robertn02.github.io/website/#contact" class="btn-contact">CONTACT ME</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="projects-section">
+      <div class="projects-container">
+        <div class="projects-header">
+          <h1 class="projects-title">Projects</h1>
+          <p class="projects-intro">Selected analytics and machine learning projects across aviation, finance, operations, and consumer domains.</p>
+        </div>
+
+        <hr class="projects-divider" />
+
+        <div class="projects-filters" role="group" aria-label="Project filters">
+          <button type="button" class="filter-btn is-active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="retail-consumer">Retail & Consumer</button>
+          <button type="button" class="filter-btn" data-filter="aviation-mobility">Aviation & Mobility</button>
+          <button type="button" class="filter-btn" data-filter="finance">Finance & Investing</button>
+          <button type="button" class="filter-btn" data-filter="people">People Analytics</button>
+          <button type="button" class="filter-btn" data-filter="operations">Operations & Semiconductor</button>
+          <button type="button" class="filter-btn" data-filter="data-science">Data Science & ML</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <a class="project-card" data-category="retail-consumer data-science" href="https://github.com/plvu99/Analysis-of-Starbucks-Promotional-Campaign-and-Customer-Segmentation" target="_blank" rel="noopener">
+            <div class="project-media">
+              <img src="../Images/Projects/Campaign Analysis & Segmentation.webp" alt="Campaign analysis dashboards showing segmentation insights">
+            </div>
+            <div class="project-body">
+              <span class="project-meta">Retail & Consumer</span>
+              <h2 class="project-title">Campaign Analysis & Segmentation</h2>
+              <p class="project-desc">Lift analysis and cohort segmentation to guide promotion strategy for a global retail brand.</p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">SQL</span>
+                <span class="project-tag">Clustering</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="project-card" data-category="aviation-mobility data-science" href="https://github.com/plvu99/Clustering-and-Trend-Analysis-for-Ride-Sharing-Demand-and-Behavior" target="_blank" rel="noopener">
+            <div class="project-media">
+              <img src="../Images/Projects/Ride Sharing.jpg" alt="Ride sharing demand map and time series visualization">
+            </div>
+            <div class="project-body">
+              <span class="project-meta">Aviation & Mobility</span>
+              <h2 class="project-title">Mobility Demand Forecasting</h2>
+              <p class="project-desc">Forecasting airport transfer peaks and reallocating fleet capacity using temporal clustering.</p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Time Series</span>
+                <span class="project-tag">K-Means</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="project-card" data-category="finance retail-consumer" href="https://github.com/plvu99/SQL-Driven-Analysis-of-Sales-Performance-and-Customer-Behavior" target="_blank" rel="noopener">
+            <div class="project-media">
+              <img src="../Images/Projects/Sales Performance.webp" alt="Sales performance dashboard with product mix charts">
+            </div>
+            <div class="project-body">
+              <span class="project-meta">Finance & Retail</span>
+              <h2 class="project-title">Sales Performance Intelligence</h2>
+              <p class="project-desc">RFM scoring and product mix analytics to prioritize revenue levers across retail portfolios.</p>
+              <div class="project-tags">
+                <span class="project-tag">SQL</span>
+                <span class="project-tag">Tableau</span>
+                <span class="project-tag">RFM</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="project-card" data-category="people data-science" href="https://github.com/plvu99/Impact-of-Salary-Hikes-on-Employee-Attrition" target="_blank" rel="noopener">
+            <div class="project-media">
+              <img src="../Images/Projects/Salary Hikes.avif" alt="Talent analytics visual showing retention metrics">
+            </div>
+            <div class="project-body">
+              <span class="project-meta">People Analytics</span>
+              <h2 class="project-title">Attrition Drivers Modeling</h2>
+              <p class="project-desc">Quantifying salary interventions on retention using logistic models and SHAP narratives.</p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Logistic</span>
+                <span class="project-tag">SHAP</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="project-card" data-category="finance data-science" href="https://github.com/plvu99/Car-Insurance-Loss-Analytics" target="_blank" rel="noopener">
+            <div class="project-media">
+              <img src="../Images/Projects/Car Insurance.avif" alt="Insurance pricing analytics dashboards">
+            </div>
+            <div class="project-body">
+              <span class="project-meta">Insurance Analytics</span>
+              <h2 class="project-title">Insurance Loss Analytics</h2>
+              <p class="project-desc">Pricing models and severity drivers using GLM and Tweedie frameworks for underwriting.</p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">GLM</span>
+                <span class="project-tag">Tweedie</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="project-card" data-category="operations data-science" href="https://github.com/plvu99/Semiconductor-Yield-Analytics" target="_blank" rel="noopener">
+            <div class="project-media">
+              <img src="../Images/Projects/Sports Performance.jpeg" alt="Factory operations dashboard with throughput visualizations">
+            </div>
+            <div class="project-body">
+              <span class="project-meta">Semiconductors & Operations</span>
+              <h2 class="project-title">Semiconductor Yield Analytics</h2>
+              <p class="project-desc">Fab throughput dashboards and anomaly detection to lift first-pass yield across product lines.</p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Power BI</span>
+                <span class="project-tag">ML</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="project-card" data-category="data-science" href="https://github.com/plvu99/Home-Team-Bias-in-MLB-Umpiring" target="_blank" rel="noopener">
+            <div class="project-media">
+              <img src="../Images/Projects/MLB Games.webp" alt="Sports analytics visualization comparing umpire calls">
+            </div>
+            <div class="project-body">
+              <span class="project-meta">Data Science & ML</span>
+              <h2 class="project-title">Home-Team Bias Detection</h2>
+              <p class="project-desc">Event-level umpire analytics uncovering bias signals using probabilistic strike-zone models.</p>
+              <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Pandas</span>
+                <span class="project-tag">Viz</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <p class="projects-footer-note">Every project sharpened how I bridge analytics with strategy — reach out if you’d like the deeper dive.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>ROBERT NGUYEN</h2>
+      </div>
+
+      <div class="footer-contact">
+        <h3>CONTACT</h3>
+        <ul>
+          <li><a href="tel:+12132722966">213-272-2966</a></li>
+          <li><a href="mailto:Phucn@marshall.usc.edu">Phucn@marshall.usc.edu</a></li>
+          <li>Los Angeles, CA, United States</li>
+          <li>
+            <a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener"><img src="../Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a>
+            <a href="https://github.com/Robertn02" target="_blank" rel="noopener"><img src="../Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a>
+            <a href="https://medium.com/@Robertn02" target="_blank" rel="noopener"><img src="../Images/Logos/Medium.png" alt="Medium" class="footer-icon" /></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-nav">
+        <h3>NAVIGATION</h3>
+        <ul>
+          <li><a href="https://Robertn02.github.io/website/">Home</a></li>
+          <li><a href="https://Robertn02.github.io/website/experience/">Experience</a></li>
+          <li><a href="https://Robertn02.github.io/website/projects/">Projects</a></li>
+          <li><a href="https://Robertn02.github.io/website/blogs/">Blogs</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (toggleBtn && navMenu) {
+      toggleBtn.addEventListener('click', () => {
+        const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', String(!expanded));
+        navMenu.classList.toggle('show');
+        toggleBtn.textContent = navMenu.classList.contains('show') ? '✕' : '☰';
+      });
+    }
+
+    const filterButtons = Array.from(document.querySelectorAll('.filter-btn'));
+    const projectCards = Array.from(document.querySelectorAll('.project-card'));
+
+    function applyFilter(filter) {
+      projectCards.forEach((card) => {
+        const categories = (card.dataset.category || '').split(' ');
+        const shouldShow = filter === 'all' || categories.includes(filter);
+        card.style.display = shouldShow ? 'grid' : 'none';
+      });
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (button.classList.contains('is-active')) return;
+        filterButtons.forEach((btn) => btn.classList.toggle('is-active', btn === button));
+        applyFilter(button.dataset.filter || 'all');
+      });
+    });
+
+    applyFilter('all');
+
+  </script>
+</body>
+</html>
