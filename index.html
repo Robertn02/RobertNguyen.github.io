@@ -577,74 +577,124 @@
     }
 
     .insights-header {
-      text-align: center;
-      max-width: 780px;
-      margin: 0 auto 2.75rem;
+      text-align: left;
+      max-width: 960px;
+      margin: 0 0 2.5rem;
+    }
+
+    .insights-label {
+      font-family: var(--font-poppins);
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: var(--08);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: block;
     }
 
     .insights-title {
-      margin: 0;
-      font-family: var(--font-playfair);
+      margin: 0 0 1.45rem;
+      font-family: var(--font-poppins);
       font-weight: 900;
-      font-size: 2.25rem;
-      letter-spacing: 0.05em;
+      font-size: 1.75rem;
       color: var(--06);
-    }
-
-    .insights-subtitle {
-      margin: 1rem auto 0;
-      font-size: 1rem;
-      line-height: 1.65;
-      color: rgba(15, 23, 42, 0.75);
+      line-height: 1.4;
     }
 
     .insights-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+    }
+
+    .blog-card {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.75rem;
+      grid-template-columns: minmax(0, 220px) 1fr;
+      gap: 2rem;
+      text-decoration: none;
+      color: inherit;
+      background: transparent;
     }
 
-    .insight-card {
-      background: var(--05);
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      border-radius: 16px;
-      padding: 1.75rem;
-      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    .blog-card:hover .blog-title {
+      color: #0f172a;
     }
 
-    .insight-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 38px rgba(15, 23, 42, 0.1);
+    .blog-media {
+      aspect-ratio: 4 / 3;
+      position: relative;
+      overflow: hidden;
     }
 
-    .insight-card h3 {
-      margin: 0 0 0.85rem;
+    .blog-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .blog-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      padding: 0;
+    }
+
+    .blog-tag {
+      font-family: var(--font-poppins);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b7076;
+    }
+
+    .blog-title {
+      margin: 0;
       font-family: var(--font-playfair);
-      font-size: 1.35rem;
+      font-size: 1.52rem;
+      font-weight: 700;
       color: #1f252b;
+      line-height: 1.45;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 6px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
     }
 
-    .insight-card p {
-      margin: 0 0 1.25rem;
-      font-size: 0.95rem;
-      color: rgba(31, 37, 43, 0.75);
-      line-height: 1.65;
+    .blog-card:hover .blog-title,
+    .blog-card:focus-visible .blog-title {
+      color: #0f172a;
+      text-decoration-color: rgba(15, 23, 42, 0.5);
     }
 
-    .insight-link {
+    .blog-desc {
+      margin: 0;
+      font-size: 0.93rem;
+      line-height: 1.55;
+      color: #4d5054;
+    }
+
+    .blog-meta {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--06);
-      text-decoration: none;
-      transition: color 0.2s ease;
+      gap: 0.55rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: rgba(31, 37, 43, 0.55);
     }
 
-    .insight-link:hover {
-      color: var(--07);
+    .blog-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .blog-read::before {
+      content: "⏱";
+      font-size: 0.9rem;
     }
 
     .insights-footer {
@@ -669,7 +719,7 @@
 
 
     .contact-section {
-      background-color: var(--04);
+      background-color: var(--01);
       padding: 6rem 2rem;
       text-align: left;
     }
@@ -682,9 +732,13 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      padding: 2.75rem;
+      background: var(--04);
+      border-radius: 24px;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      box-shadow: 0 24px 48px rgba(15, 23, 42, 0.08);
       box-sizing: border-box;
     }
 
@@ -732,9 +786,6 @@
     }
 
     @media (min-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr 1fr;
-      }
       .contact-info, .contact-form-wrapper {
         max-width: 80%;
         margin: 0 auto;
@@ -774,7 +825,7 @@
       background-color: var(--05);
       color: var(--04);
     }
-    
+
     .contact-form textarea {
       resize: vertical;
     }
@@ -841,7 +892,7 @@
     
     .site-footer {
       background-color: var(--04);
-      color: var(--05);
+      color: var(--02);
       padding: 4rem 2rem 5rem;
     }
     
@@ -856,6 +907,13 @@
       align-items: flex-start;
     }
     
+    .footer-brand h2,
+    .footer-contact h3,
+    .footer-nav h3 {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
     .footer-contact h3,
     .footer-nav h3 {
       color: var(--02);
@@ -893,7 +951,7 @@
       width: 24px;
       height: 24px;
       margin-right: 1rem;
-      margin-top: 0;
+      vertical-align: middle;
     }
     
 /* Responsive for mobile */
@@ -947,10 +1005,21 @@
       }
 
       .insights-section { padding: 5rem 1.5rem; }
-      .insights-title { font-size: 2rem; }
-      .insights-subtitle { font-size: 0.95rem; }
-      .insights-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-      .insight-card { padding: 1.5rem; }
+      .insights-title { font-size: 1.6rem; }
+      .insights-grid { gap: 1.75rem; }
+      .blog-card { grid-template-columns: 1fr; gap: 1.1rem; }
+      .blog-media { aspect-ratio: 5 / 3; }
+      .blog-body { gap: 0.35rem; }
+      .blog-title { font-size: 1.4rem; }
+      .values-button { display: flex; justify-content: center; }
+      .values-button .btn-learn-more {
+        width: 100%;
+        max-width: 320px;
+        font-size: 1rem;
+        padding: 0.85rem 1rem;
+        display: inline-flex;
+        justify-content: center;
+      }
 
       .intro-grid {
         flex-direction: column;
@@ -1076,9 +1145,9 @@
           <p class="intro-welcome">Welcome, nice to meet you!</p>
           <h1 class="intro-name">MY NAME IS<br>ROBERT NGUYEN</h1>
           <ul class="intro-bullets">
-            <li>I bring strong global experience in analytics, business, and technology.</li>
-            <li>I’m known for working effectively across functions and cultures.</li>
-            <li>I’m driven by data and insights that lead to smarter business decisions.</li>
+            <li>I bring experience across business, analytics, and strategy.</li>
+            <li>I collaborate well across teams, functions, and cultures.</li>
+            <li>I use data and context to guide confident, thoughtful decisions.</li>
           </ul>
         </div>
         <div class="intro-image">
@@ -1105,7 +1174,7 @@
     
         <a href="https://Robertn02.github.io/website/blogs" class="card card-work">
           <h2>MY INSIGHTS</h2>
-          <p>Thoughts and explorations on business, industries, and strategy through an analytical lens. Dive into ideas, patterns, and frameworks that help explain how companies operate and make decisions.</p>
+          <p>Explorations on business, industries, and strategy through an analytical lens. Exploring ideas, patterns, and decisions that shape how companies operate and compete.</p>
           <div class="arrow"></div>
         </a>
     
@@ -1146,7 +1215,7 @@
           <div class="value-card value-collab">
             <div class="icon"><img src="Images/Icons/diversity.png" alt="Collaboration Icon" /></div>
             <h3>COLLABORATION</h3>
-            <p>“Good work happens when people think together. I listen, ask questions, and make sure everyone is aligned. Supporting teammates and building clarity early helps ideas move smoothly and prevents confusion later.”</p>
+            <p>“Good work happens when people think together. I listen, ask questions, and align early so everyone move in the same direction. Supporting teammates and building clarity keeps work smooth and avoids confusion.”</p>
           </div>
     
           <div class="value-card value-resilience">
@@ -1178,7 +1247,7 @@
         <a href="https://github.com/Robertn02/Fundamental-Indexation-and-Smart-Beta-Performance-Analysis"
           class="project-card" aria-label="Finance">
           <div class="project-media">
-            <img src="Images/Projects/Ride Sharing.jpg" alt="Finance & Investing">
+            <img src="Images/Projects/SPY.jpg" alt="Finance & Investing">
           </div>
           <div class="project-body">
             <div class="project-meta">Finance & Investing</div>
@@ -1195,7 +1264,7 @@
         <a href="https://github.com/Robertn02/Flight-Delay-Prediction-and-Airport-Optimization-LAX"
           class="project-card" aria-label="Aviation">
           <div class="project-media">
-            <img src="Images/Projects/Sales Performance.webp" alt="Aviation delay prediction">
+            <img src="Images/Projects/LAX.jpg" alt="Aviation delay prediction">
           </div>
           <div class="project-body">
             <div class="project-meta">Aviation & Mobility</div>
@@ -1212,7 +1281,7 @@
         <a href="https://github.com/Robertn02/Walmart-Retail-Performance-Analytics-Sales-Drivers-and-Holiday-Effects"
           class="project-card" aria-label="Car insurance loss analytics">
           <div class="project-media">
-            <img src="Images/Projects/Car Insurance.avif" alt="Insurance loss modeling">
+            <img src="Images/Projects/Walmart.jpg" alt="Insurance loss modeling">
           </div>
           <div class="project-body">
             <div class="project-meta">Retail & Consumer</div>
@@ -1249,28 +1318,55 @@
     <section class="insights-section">
       <div class="insights-container">
         <div class="insights-header">
-          <h2 class="insights-title">INSIGHTS</h2>
-          <p class="insights-subtitle">Exploring how analytics helps explain industries, decisions, and how businesses operate — and sharing takeaways along the way.</p>
+          <span class="insights-label">WHAT I’M EXPLORING</span>
+          <h2 class="insights-title">BREAKING DOWN BUSINESSES, INDUSTRIES, AND DECISIONS</h2>
         </div>
 
         <div class="insights-grid">
-          <article class="insight-card">
-            <h3>Understanding How Airlines Manage Capacity</h3>
-            <p>A look into how demand, timing, and constraints shape aviation planning and performance.</p>
-            <a class="insight-link" href="https://medium.com/@Robertn02" target="_blank" rel="noopener">Read more →</a>
-          </article>
+          <a class="blog-card" href="https://medium.com/@Robertn02/aviation-demand-forecasting-in-an-uncertain-travel-market-123" target="_blank" rel="noopener">
+            <div class="blog-media">
+              <img src="Images/Projects/Ride Sharing.jpg" alt="Airport transportation analytics dashboard" />
+            </div>
+            <div class="blog-body">
+              <span class="blog-tag">Aviation</span>
+              <h3 class="blog-title">Aviation Demand Forecasting in an Uncertain Travel Market</h3>
+              <p class="blog-desc">Scenario modeling for network planners when leisure rebounds faster than corporate travel.</p>
+              <div class="blog-meta">
+                <span class="blog-date">Apr 12, 2024</span>
+                <span class="blog-read">6 min read</span>
+              </div>
+            </div>
+          </a>
 
-          <article class="insight-card">
-            <h3>What Drives Operational Decisions in Complex Systems</h3>
-            <p>Breaking down how data, people, and constraints connect in real-world operations.</p>
-            <a class="insight-link" href="https://medium.com/@Robertn02" target="_blank" rel="noopener">Read more →</a>
-          </article>
+          <a class="blog-card" href="https://medium.com/@Robertn02/semiconductor-yield-levers-operations-analytics-456" target="_blank" rel="noopener">
+            <div class="blog-media">
+              <img src="Images/Projects/Sports Performance.jpeg" alt="Semiconductor fab analytics workflow" />
+            </div>
+            <div class="blog-body">
+              <span class="blog-tag">Semiconductors</span>
+              <h3 class="blog-title">Five Operations Levers to Lift Fab Yield with Analytics</h3>
+              <p class="blog-desc">Instrumenting process data, anomaly detection, and constraint mapping for faster cycle times.</p>
+              <div class="blog-meta">
+                <span class="blog-date">Mar 28, 2024</span>
+                <span class="blog-read">7 min read</span>
+              </div>
+            </div>
+          </a>
 
-          <article class="insight-card">
-            <h3>Using Analytics to Support Strategy, Not Just Reporting</h3>
-            <p>How structured thinking and data context help teams make smarter long-term decisions.</p>
-            <a class="insight-link" href="https://medium.com/@Robertn02" target="_blank" rel="noopener">Read more →</a>
-          </article>
+          <a class="blog-card" href="https://medium.com/@Robertn02/frequency-over-fees-insights-from-consumer-banking-data-789" target="_blank" rel="noopener">
+            <div class="blog-media">
+              <img src="Images/Projects/Sales Performance.webp" alt="Finance dashboard with customer segmentation charts" />
+            </div>
+            <div class="blog-body">
+              <span class="blog-tag">Finance</span>
+              <h3 class="blog-title">Frequency over Fees: Signals from Consumer Banking Data</h3>
+              <p class="blog-desc">Why transaction cadence predicts retention better than fee sensitivity in digital banking.</p>
+              <div class="blog-meta">
+                <span class="blog-date">Feb 15, 2024</span>
+                <span class="blog-read">5 min read</span>
+              </div>
+            </div>
+          </a>
         </div>
 
         <div class="insights-footer">
@@ -1327,7 +1423,11 @@
           <li><a href="tel:+12132722966">213-272-2966</a></li>
           <li><a href="mailto:Phucn@marshall.usc.edu">Phucn@marshall.usc.edu</a></li>
           <li>Los Angeles, CA, United States</li>
-          <li><a href="https://www.linkedin.com/in/phucnh2402/" target="_blank"><img src="Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a> <a href="https://github.com/Robertn02" target="_blank"><img src="Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a><a href="https://medium.com/@Robertn02" target="_blank"><img src="Images/Logos/Medium.png" alt="Medium" class="footer-icon" /></a></li>            
+          <li>
+            <a href="https://www.linkedin.com/in/phucnh2402/" target="_blank" rel="noopener"><img src="../Images/Logos/LinkedIn.webp" alt="LinkedIn" class="footer-icon" /></a>
+            <a href="https://github.com/Robertn02" target="_blank" rel="noopener"><img src="../Images/Logos/GitHub.png" alt="GitHub" class="footer-icon" /></a>
+            <a href="https://medium.com/@Robertn02" target="_blank" rel="noopener"><img src="../Images/Logos/Medium.png" alt="Medium" class="footer-icon" /></a>
+          </li>
         </ul>
       </div>
     
